@@ -21,7 +21,6 @@ export default function Header() {
         return null;
     }
 
-    console.log(userData);
 
     return (
         <div className="container w-full p-2 items-center flex md:flex-row flex-col">
