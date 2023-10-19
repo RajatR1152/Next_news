@@ -24,6 +24,7 @@ export default function WeatherCard() {
 
         axios.get('http://api.weatherapi.com/v1/current.json?key=a1f50718791342e2896151655231810&q=nagpur&aqi=no').then((res) => {
             setData(res.data);
+            console.log(res.data);
         })
     }
 
@@ -47,7 +48,7 @@ export default function WeatherCard() {
             <h1 className="text-3xl my-4 font-semibold">{date}</h1>
             <h1 className="text-4xl my-4 font-semibold">{time}</h1>
             <img className='w-32 h-32 mx-auto' src={data?.current?.condition?.icon} alt="" />
-            <h1 className="text-2xl text-center font-semibold mb-3">Misty</h1>
+            <h1 className="text-2xl text-center font-semibold mb-3">{data?.current?.condition?.text}</h1>
 
             <div className='flex flex-row gap-9 w-fit mx-auto'>
                 <h1 className="text-3xl text-center font-semibold">{data?.current?.temp_c}°C</h1>
